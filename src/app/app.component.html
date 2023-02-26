@@ -1,55 +1,41 @@
-<!DOCTYPE html>
+<h3> Janus Milan </h3>
+<h2> App Demonstration</h2>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Resume</title>
-</head>
+<div>
+Today's date :- {{presentDate}}
+</div>
+<div>
+Today's date :- {{presentDate | date}}
+</div>
+<div>
+This is a short date :- {{presentDate | date: 'shortDate' }} <br/>
+This lien shows the full date :- {{presentDate | date: 'fullDate' }} <br/>
+This will show a formatted date:- {{presentDate | date: 'M/dd//yyyy'}} <br/>
+This indicates the hours and minutes:- {{presentDate | date:'h;mm'}}
 
-<body>
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
-      <div class="logo">
-        <h1><a href="index.html">JANUS KEITH T. MILAN</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul class="nav m-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link scrollto active text-black" href="#hero">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link scrollto text-black" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link scrollto text-black" href="#resume">Resume</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link scrollto text-black" href="#services"
-              >Services</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link scrollto text-black" href="#portfolio"
-              >Portfolio</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link scrollto text-black" href="#contact">Contact</a>
-          </li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav>
-      <!-- .navbar -->
-    </div>
-  </header>
-  <!-- End Header -->
-
-  <app-about></app-about>
-  <app-skills></app-skills>
-  <app-education></app-education>
-  <app-references></app-references>
-</body>
+<h3> Date Pipes </h3>
+</div>
+<div>
+  Date with uppercase :- {{presentDate | date:'fullDate' | uppercase}} <br/>
+  Date with lowercase :- {{presentDate | date:'medium' | lowercase}} <br/>
+</div>
+<div>
+  Seconds changing in Time: {{ today0$ | async | date:'mediumTime' }}
+</div>
+<h3> Currency Pipe</h3>
+<p>{{ price | currency: '':true}}</p>
+<p>{{ price | currency: 'INR'}}</p>
+<div style="text-align:center">
+<h3>Decimal Pipe</h3>
+<p>Apply formatting:- {{ decimalNum1 | number: '3.1' }}</p>
+<p>Apply formatting:- {{ decimalNum2 | number: '2.1-4' }}</p>
+<p>Apply formatting:- {{ decimalNum3 | number: '2.1-4' }}</p>
+<p>Apply formatting:- {{ decimalNum4 | number: '2.1-4' }}</p>
+<p>Apply formatting:- {{ decimalNum5 | number: '2.1-4' }}</p>
+</div>
+<div>
+  <h3> Start index:- {{Fruits | slice:2}}</h3>
+  <h4>Start and end index:- {{Fruits | slice:1.4}}</h4>
+  <h5>Negative index:- {{Fruits | slice :-2}}</h5>
+  <h6>Negative start and end index:- {{Fruits | slice:-4:-2}}</h6>
+</div>
